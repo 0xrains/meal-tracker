@@ -20,8 +20,8 @@ Aplikasi pencatat pengeluaran makan harian sederhana, modern, dan responsif deng
 
 ### 1. Clone Repository & Install Dependency
 ```bash
-git clone <URL_REPOSITORY_ANDA>
-cd MealTrackerMain
+git clone https://github.com/0xrains/meal-tracker.git
+cd meal-tracker
 npm install
 ```
 
@@ -36,14 +36,7 @@ VITE_SUPABASE_ANON_KEY=<YOUR-SUPABASE-ANON-KEY>
 1. Buka **SQL Editor** di dashboard Supabase kamu, lalu salin dan jalankan seluruh isi script dari file **[`supabase_schema.sql`](./supabase_schema.sql)**.
 2. Pastikan fitur **Email Auth** aktif di dashboard Supabase (**Authentication -> Providers -> Email**). *(Opsional: nonaktifkan "Confirm email" di Auth Settings jika ingin user langsung login setelah registrasi tanpa perlu klik link verifikasi email).*
 
-Script database tersebut akan secara otomatis membuat:
-- Tabel `transactions` (data riwayat pengeluaran per user)
-- Tabel `funding_sources` (master data sumber dana per user)
-- Tabel `app_settings` (konfigurasi target anggaran per user)
-- PostgreSQL Trigger untuk mengisikan data bawaan otomatis saat user baru mendaftar
-- Kebijakan keamanan Row Level Security (RLS) `auth.uid() = user_id`
-
-### 4. Jalankan Aplikasi
+### 4. Jalankan
 ```bash
 npm run dev
 ```
@@ -54,8 +47,4 @@ Buka browser di `http://localhost:5173`. Masuk dengan akun kamu atau daftar akun
 ## 🛠️ Tech Stack
 
 - **Framework**: React 18 + Vite + TypeScript
-- **Styling**: Tailwind CSS + Lucide Icons
-- **Chart**: Recharts
-- **Database / Backend**: Supabase
-- **Notification**: React Hot Toast
-- **Form Handling**: React Hook Form
+- **Database**: Supabase
