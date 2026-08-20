@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Mono:ital,wght@0,300..500;1,300..500&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   Blink UI Theme CSS
+   REQUIRED for @blinkdotnew/ui components to render correctly.
+   BlinkUIProvider adds .theme-{name} + .dark/.light to <html>,
+   activating the matching CSS variable set below.
+   ───────────────────────────────────────────────────────────────────────────── */
+@import '@blinkdotnew/ui/styles';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    * {
+        @apply border-border;
+    }
+
+    body {
+        @apply bg-background text-foreground;
+        font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+        letter-spacing: var(--tracking-normal);
+    }
+}
+
+/* ── App palette (unlayered, after utilities) ─────────────────────────────────
+   Overrides @blinkdotnew/ui theme colors. @layer base loses specificity to UI themes.
+   Dark mode uses :root.dark + .theme-*.dark to match BlinkUIProvider.
+   ⚠️ AGENT MUST REPLACE placeholder values with a custom palette.
+   ──────────────────────────────────────────────────────────────────────────── */
+:root {
+    --background: 150 20% 97%;
+    --foreground: 158 30% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 158 30% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 158 30% 12%;
+    --primary: 158 64% 38%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 158 30% 92%;
+    --secondary-foreground: 158 64% 25%;
+    --muted: 150 15% 93%;
+    --muted-foreground: 158 10% 48%;
+    --accent: 158 30% 88%;
+    --accent-foreground: 158 64% 25%;
+    --destructive: 354 70% 54%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 150 15% 88%;
+    --input: 150 15% 88%;
+    --ring: 158 64% 38%;
+    --chart-1: 158 64% 38%;
+    --chart-2: 354 70% 54%;
+    --chart-3: 43 96% 52%;
+    --chart-4: 205 80% 50%;
+    --chart-5: 262 52% 50%;
+    --sidebar: 158 30% 92%;
+    --sidebar-foreground: 158 30% 12%;
+    --sidebar-primary: 158 64% 38%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 158 30% 88%;
+    --sidebar-accent-foreground: 158 64% 25%;
+    --sidebar-border: 150 15% 88%;
+    --sidebar-ring: 158 64% 38%;
+    --font-sans: 'DM Sans', sans-serif;
+    --font-mono: 'DM Mono', monospace;
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.625rem;
+    --shadow-2xs: 0px 2px 4px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 2px 4px -1px hsl(0 0% 0% / 0.06);
+    --shadow-sm: 0px 2px 6px -1px hsl(0 0% 0% / 0.08), 0px 1px 2px -1px hsl(0 0% 0% / 0.06);
+    --shadow: 0px 4px 8px -2px hsl(0 0% 0% / 0.08), 0px 2px 4px -2px hsl(0 0% 0% / 0.06);
+    --shadow-md: 0px 6px 12px -3px hsl(0 0% 0% / 0.08), 0px 3px 6px -3px hsl(0 0% 0% / 0.06);
+    --shadow-lg: 0px 12px 24px -6px hsl(0 0% 0% / 0.10), 0px 6px 12px -6px hsl(0 0% 0% / 0.08);
+    --shadow-xl: 0px 20px 40px -8px hsl(0 0% 0% / 0.12), 0px 10px 20px -8px hsl(0 0% 0% / 0.08);
+    --shadow-2xl: 0px 28px 56px -10px hsl(0 0% 0% / 0.18);
+}
+
+:root.dark,
+.dark,
+.theme-linear.dark,
+.theme-glass.dark,
+.theme-midnight.dark,
+.theme-minimal.dark {
+    --background: 222 35% 8%;
+    --foreground: 210 25% 98%;
+    --card: 222 30% 12%;
+    --card-foreground: 210 25% 98%;
+    --popover: 222 30% 12%;
+    --popover-foreground: 210 25% 98%;
+    --primary: 158 64% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 222 25% 18%;
+    --secondary-foreground: 210 20% 90%;
+    --muted: 222 25% 16%;
+    --muted-foreground: 215 20% 68%;
+    --accent: 222 25% 20%;
+    --accent-foreground: 210 20% 95%;
+    --destructive: 354 75% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 222 25% 20%;
+    --input: 222 25% 20%;
+    --ring: 158 64% 45%;
+    --chart-1: 158 64% 45%;
+    --chart-2: 354 70% 60%;
+    --chart-3: 43 90% 55%;
+    --chart-4: 205 75% 55%;
+    --chart-5: 262 50% 62%;
+    --sidebar: 222 30% 12%;
+    --sidebar-foreground: 210 25% 98%;
+    --sidebar-primary: 158 64% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 25% 20%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 222 25% 20%;
+    --sidebar-ring: 158 64% 45%;
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.35s ease-out both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-modal-in {
+    animation: modalIn 0.2s ease-out both;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-modal-in {
+    animation: modalIn 0.2s ease-out;
+}
+
+@keyframes modalIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/* Custom sleek scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.25);
+    border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.45);
+}
+
+* {
+    scrollbar-width: thin;
+    scrollbar-color: hsl(var(--muted-foreground) / 0.25) transparent;
+}
